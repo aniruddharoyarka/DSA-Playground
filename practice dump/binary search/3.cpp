@@ -1,4 +1,6 @@
-//Binary Search on non duplicate elements
+//Binary Search on duplicate elements
+
+//Lower Bound
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,18 +9,19 @@ vector<int> vec;
 
 int binarySearch(int value) {
     int low =0, high = vec.size()-1;
+    int ans = vec.size();
     while(low<=high) {
         int mid = (low + high) /2;
-        if(vec[mid] == value) {
-            return mid;
-        }
-        else if(vec[mid] > value) {
+
+        if(vec[mid] >= value) {
+            ans = mid;
             high = mid -1;
         }
-        else {
+        else{
             low = mid + 1;
         }
     }
+    return ans;
 }
 
 int main()
@@ -41,3 +44,4 @@ int main()
     int index = binarySearch(value);
     cout << "INDEX: " << index;
 }
+
