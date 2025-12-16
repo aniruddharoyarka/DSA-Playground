@@ -4,7 +4,7 @@ using namespace std;
 vector<int> searchRange(vector<int> nums, int target)
 {
     int n = nums.size();
-    vector<int> result(2, -1);
+    vector<int> result = {2, -1};
 
     int low = 0, high = n - 1;
     int first = -1;
