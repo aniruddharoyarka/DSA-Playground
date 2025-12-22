@@ -6,13 +6,10 @@ void selectionSort(vector<int> vec)
     int comparsionCount = 0;
     int swapCount = 0;
     for(int i=0;i<vec.size()-1;i++) {
-
-        if(vec[i]<=0) continue;
-
         int smallest = i;
         for(int j =i+1;j<vec.size();j++) {
             comparsionCount++;
-            if(vec[j]>0 && vec[j]<vec[smallest]) {
+            if(vec[j]<vec[smallest]) {
                 smallest = j;
             }
         }
